@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Cases</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1e3d58;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container h2 {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1em;
+            margin-bottom: 8px;
+            display: block;
+            color: #FFD700;
+        }
+
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: white;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .submit-btn {
+            padding: 12px;
+            background-color: #FFD700;
+            color: black;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .submit-btn:hover {
+            background-color: #FFC300;
+        }
+
+        .image-container {
+            flex: 1;
+            background-image: url('assets/image/gambar perahu.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                width: 90%;
+            }
+
+            .image-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-container">
+            <h2>Projects Cases</h2>
+            <form action="submit_1.php" method="POST">
+                <label for="cases-name">Cases Name:</label>
+                <input type="text" id="cases-name" name="cases-name" placeholder="Enter cases name" required>
+
+                <label for="description-cases">Description Cases:</label>
+                <textarea id="description" name="description-cases" rows="4" placeholder="Describe your cases" required></textarea>
+
+                <label for="cases-status">Cases Status?</label><br>
+                    <select id="list" name="list" required>
+                    <option value="Open">Open</option>
+                    <option value="In-Progress">In Progess</option>
+                    <option value="Resolved">Resolved</option>
+                </select><br><br>
+
+                <label for="date-opened">Date Opened:</label>
+                <input type="date" id="date-opened" name="date-opened" required>
+
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-container"></div>
+    </div>
+</body>
+</html>
